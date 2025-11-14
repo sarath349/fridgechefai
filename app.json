@@ -1,29 +1,56 @@
 {
   "expo": {
-    "name": "FridgeChefAI",
-    "slug": "FridgeChefAI",
+    "name": "FridgeChef AI",
+    "slug": "fridgechef-ai",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/fridge.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/@splashscreen.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#FF6B35"
     },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.fridgechef.ai",
+      "buildNumber": "1.0.0",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "FridgeChef AI needs access to your photo library so you can upload photos of your ingredients to generate recipes.",
+        "NSCameraUsageDescription": "FridgeChef AI needs access to your camera so you can take photos of your ingredients to generate recipes."
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/fridge.png",
+        "backgroundColor": "#FF6B35"
       },
+      "package": "com.fridgechef.ai",
+      "versionCode": 1,
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ],
       "edgeToEdgeEnabled": true
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/fridge.png"
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "FridgeChef AI needs access to your photos so you can upload ingredient images to generate recipes.",
+          "cameraPermission": "FridgeChef AI needs access to your camera so you can take photos of your ingredients to generate recipes."
+        }
+      ]
+    ],
+    "description": "Transform your fridge ingredients into delicious meals with AI-powered recipe generation! Features include photo ingredient recognition, dietary preferences, shopping lists, recipe sharing, and smart meal suggestions. Reduce food waste, save money, and discover new recipes!",
+    "privacy": "public"
   }
 }
