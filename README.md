@@ -338,3 +338,4 @@ This project is ready for commercial use. You own the code and can publish it un
 5. Market your app!
 
 Good luck with your app launch! 🎉
+# fridgechefai
