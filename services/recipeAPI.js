@@ -56,6 +56,50 @@ export const searchRecipesByIngredient = async (ingredient) => {
   }
 };
 
+// Filter by TheMealDB category (e.g. Breakfast, Starter, Vegetarian)
+export const searchRecipesByCategory = async (category) => {
+  try {
+    const response = await fetch(
+      `${THEMEALDB_BASE_URL}/filter.php?c=${encodeURIComponent(category)}`
+    );
+    const data = await response.json();
+    if (data.meals && data.meals.length > 0) {
+      return data.meals.map((meal) => ({
+        id: meal.idMeal,
+        name: meal.strMeal,
+        thumbnail: meal.strMealThumb,
+        category,
+      }));
+    }
+    return [];
+  } catch (error) {
+    console.error('TheMealDB category search error:', error);
+    return [];
+  }
+};
+
+// Filter by cuisine/area (e.g. Indian, Italian)
+export const searchRecipesByArea = async (area) => {
+  try {
+    const response = await fetch(
+      `${THEMEALDB_BASE_URL}/filter.php?a=${encodeURIComponent(area)}`
+    );
+    const data = await response.json();
+    if (data.meals && data.meals.length > 0) {
+      return data.meals.map((meal) => ({
+        id: meal.idMeal,
+        name: meal.strMeal,
+        thumbnail: meal.strMealThumb,
+        area,
+      }));
+    }
+    return [];
+  } catch (error) {
+    console.error('TheMealDB area search error:', error);
+    return [];
+  }
+};
+
 // Get detailed recipe by ID with AI-enhanced step-by-step instructions
 export const getRecipeDetails = async (recipeId) => {
   try {

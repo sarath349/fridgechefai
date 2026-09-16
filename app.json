@@ -1,56 +1,62 @@
 {
   "expo": {
-    "name": "FridgeChef AI",
-    "slug": "fridgechef-ai",
+    "name": "RecipeGenie",
+    "slug": "recipegenie",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/fridge.png",
+    "icon": "./assets/logo.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/@splashscreen.png",
+      "image": "./assets/logo.png",
       "resizeMode": "contain",
-      "backgroundColor": "#FF6B35"
+      "backgroundColor": "#FFF8F0"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.fridgechef.ai",
+      "bundleIdentifier": "com.recipegenie.app",
       "buildNumber": "1.0.0",
       "infoPlist": {
-        "NSPhotoLibraryUsageDescription": "FridgeChef AI needs access to your photo library so you can upload photos of your ingredients to generate recipes.",
-        "NSCameraUsageDescription": "FridgeChef AI needs access to your camera so you can take photos of your ingredients to generate recipes."
+        "NSPhotoLibraryUsageDescription": "RecipeGenie needs access to your photo library so you can upload photos of your ingredients to generate recipes.",
+        "NSCameraUsageDescription": "RecipeGenie needs access to your camera so you can take photos of your ingredients to generate recipes."
       }
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/fridge.png",
-        "backgroundColor": "#FF6B35"
+        "foregroundImage": "./assets/logo.png",
+        "backgroundColor": "#FFF8F0"
       },
-      "package": "com.fridgechef.ai",
+      "package": "com.recipegenie.app",
       "versionCode": 1,
       "permissions": [
-        "CAMERA",
-        "READ_EXTERNAL_STORAGE",
-        "WRITE_EXTERNAL_STORAGE"
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.RECORD_AUDIO"
       ],
       "edgeToEdgeEnabled": true
     },
     "web": {
-      "favicon": "./assets/fridge.png"
+      "favicon": "./assets/logo.png"
     },
     "plugins": [
       [
         "expo-image-picker",
         {
-          "photosPermission": "FridgeChef AI needs access to your photos so you can upload ingredient images to generate recipes.",
-          "cameraPermission": "FridgeChef AI needs access to your camera so you can take photos of your ingredients to generate recipes."
+          "photosPermission": "RecipeGenie needs access to your photos so you can upload ingredient images to generate recipes.",
+          "cameraPermission": "RecipeGenie needs access to your camera so you can take photos of your ingredients to generate recipes."
         }
       ]
     ],
     "description": "Transform your fridge ingredients into delicious meals with AI-powered recipe generation! Features include photo ingredient recognition, dietary preferences, shopping lists, recipe sharing, and smart meal suggestions. Reduce food waste, save money, and discover new recipes!",
-    "privacy": "public"
+    "extra": {
+      "eas": {
+        "projectId": "da09cfb9-fdfa-4606-aaea-728535b39578"
+      }
+    },
+    "owner": "sarathpc"
   }
 }
